@@ -1,8 +1,12 @@
 <%- include("partials/header") -%>
 
 
-<h1>Home</h1>
+<h2>Home</h2>
 <p><%= paragraph %></p>
+<% for (let i=0;i<postValues.length;i++){ %>
+  <h2><%= postValues[i].titleText %></h2>
+  <p><%= postValues[i].postText %></p>
+<% } %>
 
 
 <%- include("partials/footer") -%>
