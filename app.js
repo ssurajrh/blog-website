@@ -46,8 +46,10 @@ app.post("/compose",function(req,res){
 
 app.get("/home/:title",(req,res) =>{
   title_lower=_.lowerCase(req.params.title)
+
   posts.forEach((item) => {
     if(_.lowerCase(item.titleText)==title_lower)
+
       res.render("post",{ titleText:item.titleText,postText : item.postText})
   });
 
