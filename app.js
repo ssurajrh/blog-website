@@ -58,15 +58,22 @@ app.get("/compose",function(req,res){
 
 app.post("/compose",function(req,res){
   const newBlogPost=new blogModel({
-    name:req.body.titleText,
+    name:_.startCase(req.body.titleText),
     value:req.body.postText
   })
   newBlogPost.save()
   res.redirect("/")
 })
 
+app.post("/delete",(req,res)=>{
+  postTitle=req.body.titleName
+  blogModel.deleteOne({name:postTitle}).then((ress)=>{
+    res.redirect("/")
+  })
+})
+
 app.get("/home/:title",(req,res) =>{
-  title=req.params.title
+  title=_.startCase(req.params.title)
   blogModel.findOne({name:title}).then((docs)=>{
       res.render("post",{ titleText:docs.name,postText : docs.value})
   })
