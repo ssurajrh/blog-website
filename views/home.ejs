@@ -3,10 +3,10 @@
 
 <h1>Home</h1>
 <p><%= paragraph %></p>
-<%postValues.forEach(function(item) { %>
+<% postValues.forEach(function(item) { %>
 
-  <h1><%= item.titleText %></h1>
-  <p><%= item.postText.substring(0,100)+" ..." %><a href="/home/<%= item.titleText %>">Read more</a></p>
+  <h1><%= item.name %></h1>
+  <p><%= item.value.substring(0,100)+" ..." %><a href="/home/<%= item.name %>">Read more</a></p>
 
 <% }); %>
 
