@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _=require("lodash")
 const mongoose=require("mongoose")
-const dbUrl = "mongodb+srv://{{env.UID}}:{{env.PSWD}}@cluster38817.tfmkybi.mongodb.net/blogsDB?retryWrites=true&w=majority"
+const dbUrl = "mongodb+srv://Cluster38817:Z6F3nMnX0NubjbBE@cluster38817.tfmkybi.mongodb.net/blogsDB?retryWrites=true&w=majority"
 const connectionParams={
   useNewUrlParser:true,
   useUNifiedTopology:true
